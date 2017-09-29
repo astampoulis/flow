@@ -36,6 +36,12 @@ Error: B.js:12
  12: var bad: number = A.Bad.foo(); // error: string, number (but `this` types are compatible)
               ^^^^^^ number
 
+Error: exact.js:11
+ 11:   return Object.assign({}, p);
+                            ^^ object literal. Inexact type is incompatible with exact type
+ 10: function inexactToExact(p: InexactPerson): ExactPerson {
+                                                ^^^^^^^^^^^ exact type: object type
+
 Error: non_objects.js:3
   3: Object.assign("123", {a: "foo"});
      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ property `a` of object literal. Property cannot be assigned on
@@ -99,4 +105,4 @@ Error: spread.js:12
                            ^^^^ boolean literal `true`
 
 
-Found 13 errors
+Found 14 errors

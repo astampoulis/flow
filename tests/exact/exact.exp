@@ -73,6 +73,12 @@ Error: prop_test.js:28
  28:   return pc.state;      // error, since (pc: $Exact<Person>).first may be ""
               ^^ object type
 
+Error: spread.js:18
+ 18:   return { ...p };
+              ^^^^^^^^ object literal. Inexact type is incompatible with exact type
+ 17: function inexactToExact(p: InexactPerson): ExactPerson {
+                                                ^^^^^^^^^^^ exact type: object type
+
 Error: unsealed.js:14
  14: f(o); // error: o incompatible with exact type
        ^ object literal. This type is incompatible with the expected param type of
@@ -126,4 +132,4 @@ Error: use_ops.js:6
                    ^^^^^^^^^^^^^ exact type: object type
 
 
-Found 13 errors
+Found 14 errors
